@@ -1,3 +1,5 @@
+import { assetPath } from './paths'
+
 export type TimerMode = 'work' | 'shortBreak' | 'longBreak'
 export type ThemeMode = 'light' | 'dark' | 'auto'
 export type ProfileId = 'classic' | 'deep' | 'quick' | 'custom'
@@ -50,12 +52,12 @@ export interface Settings {
 }
 
 export const SOUND_TRACKS = [
-  { id: 'rain', label: 'Rain', file: '/sounds/rain.wav', color: '#6b9ac4' },
-  { id: 'cafe', label: 'Café', file: '/sounds/cafe.wav', color: '#c4a574' },
-  { id: 'noise', label: 'White noise', file: '/sounds/noise.wav', color: '#9ca3af' },
-  { id: 'forest', label: 'Forest', file: '/sounds/forest.wav', color: '#7eb8a8' },
-  { id: 'lofi', label: 'Lo-fi', file: '/sounds/lofi.wav', color: '#a78baf' },
-  { id: 'fireplace', label: 'Fireplace', file: '/sounds/fireplace.wav', color: '#d97757' },
+  { id: 'rain', label: 'Rain', file: assetPath('/sounds/rain.wav'), color: '#6b9ac4' },
+  { id: 'cafe', label: 'Café', file: assetPath('/sounds/cafe.wav'), color: '#c4a574' },
+  { id: 'noise', label: 'White noise', file: assetPath('/sounds/noise.wav'), color: '#9ca3af' },
+  { id: 'forest', label: 'Forest', file: assetPath('/sounds/forest.wav'), color: '#7eb8a8' },
+  { id: 'lofi', label: 'Lo-fi', file: assetPath('/sounds/lofi.wav'), color: '#a78baf' },
+  { id: 'fireplace', label: 'Fireplace', file: assetPath('/sounds/fireplace.wav'), color: '#d97757' },
 ] as const
 
 export type SoundTrackId = (typeof SOUND_TRACKS)[number]['id']

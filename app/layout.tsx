@@ -1,13 +1,14 @@
 import type { Metadata, Viewport } from 'next'
 import './globals.css'
 import AppShell from '@/components/layout/AppShell'
+import { assetPath } from '@/lib/paths'
 
 export const metadata: Metadata = {
   title: 'Chronos — Focus & Productivity Hub',
   description:
     'Pomodoro timer, ambient sound mixer, tasks, and focus heatmap — offline-first, no login, installable PWA.',
   applicationName: 'Chronos',
-  manifest: '/manifest.webmanifest',
+  manifest: assetPath('/manifest.webmanifest'),
   appleWebApp: {
     capable: true,
     statusBarStyle: 'black-translucent',
@@ -15,10 +16,10 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: '/icons/icon-192.png', sizes: '192x192', type: 'image/png' },
-      { url: '/icons/icon-512.png', sizes: '512x512', type: 'image/png' },
+      { url: assetPath('/icons/icon-192.png'), sizes: '192x192', type: 'image/png' },
+      { url: assetPath('/icons/icon-512.png'), sizes: '512x512', type: 'image/png' },
     ],
-    apple: [{ url: '/icons/icon-192.png', sizes: '192x192' }],
+    apple: [{ url: assetPath('/icons/icon-192.png'), sizes: '192x192' }],
   },
 }
 

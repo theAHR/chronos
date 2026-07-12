@@ -111,13 +111,33 @@ interface Settings {
 
 ## Deploy
 
-Deploy free on Vercel:
+### GitHub Pages (static)
+
+This project builds as a fully static site (`output: 'export'`) and deploys automatically via GitHub Actions on pushes to `main` / `master`.
+
+1. In your repo on GitHub, go to **Settings → Pages**.
+2. Under **Build and deployment**, set **Source** to **GitHub Actions**.
+3. Push to `main` — the workflow publishes to `https://<user>.github.io/chronos/`.
+
+Local static build (same as CI):
+
+```bash
+# Windows PowerShell
+$env:NEXT_PUBLIC_BASE_PATH="/chronos"; npm run build:pages
+
+# macOS / Linux
+NEXT_PUBLIC_BASE_PATH=/chronos npm run build:pages
+```
+
+Output is written to `out/`. For root-domain hosting (e.g. `username.github.io`), omit `NEXT_PUBLIC_BASE_PATH`.
+
+### Vercel / other hosts
 
 ```bash
 npm run build
 ```
 
-Point Vercel at the `chronos` folder. After deploy, use “Install app” / Add to Home Screen for the PWA.
+Point your host at the `chronos` folder. After deploy, use “Install app” / Add to Home Screen for the PWA.
 
 ## License
 

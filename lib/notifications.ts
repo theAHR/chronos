@@ -1,5 +1,7 @@
 'use client'
 
+import { assetPath } from './paths'
+
 export async function requestNotificationPermission(): Promise<boolean> {
   if (typeof window === 'undefined' || !('Notification' in window)) return false
   if (Notification.permission === 'granted') return true
@@ -14,8 +16,8 @@ export function notifySessionComplete(modeLabel: string, body: string) {
   try {
     const n = new Notification(`${modeLabel} complete — Chronos`, {
       body,
-      icon: '/icons/icon-192.png',
-      badge: '/icons/icon-192.png',
+      icon: assetPath('/icons/icon-192.png'),
+      badge: assetPath('/icons/icon-192.png'),
       silent: false,
     })
     setTimeout(() => n.close(), 6000)
