@@ -1,0 +1,43 @@
+.ring {
+  filter: drop-shadow(0 0 18px color-mix(in srgb, var(--chronos-ring) 35%, transparent));
+}
+
+.progress {
+  transition: stroke-dashoffset 0.35s linear;
+}
+
+.halo {
+  animation: haloPulse 5.5s ease-in-out infinite;
+  transform-origin: center;
+}
+
+@keyframes haloPulse {
+  0%,
+  100% {
+    opacity: 0.25;
+    transform: scale(0.98);
+  }
+  50% {
+    opacity: 0.55;
+    transform: scale(1.02);
+  }
+}
+
+.celebrate {
+  animation: celebrateBurst 0.9s ease-out;
+}
+
+@keyframes celebrateBurst {
+  0% {
+    transform: scale(0.96);
+    filter: brightness(1);
+  }
+  40% {
+    transform: scale(1.04);
+    filter: brightness(1.2);
+  }
+  100% {
+    transform: scale(1);
+    filter: brightness(1);
+  }
+}

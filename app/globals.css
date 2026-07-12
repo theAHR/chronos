@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Outfit:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-sans: 'Outfit', system-ui, sans-serif;
+
+  --chronos-bg: #f3efe8;
+  --chronos-surface: #fffdf9;
+  --chronos-elevated: #efe8dc;
+  --chronos-border: #ddd2c3;
+  --chronos-muted: #7a7166;
+  --chronos-text: #2a241e;
+  --chronos-accent: #3d8f7a;
+  --chronos-accent-soft: rgba(61, 143, 122, 0.18);
+  --chronos-warm: #c4a574;
+  --chronos-ring: #3d8f7a;
+
+  --heat-0: #e8e0d4;
+  --heat-1: #b7d4c8;
+  --heat-2: #7eb8a8;
+  --heat-3: #4f9a86;
+  --heat-4: #2f6f5f;
+}
+
+html.dark,
+html[data-theme='dark'] {
+  --chronos-bg: #161210;
+  --chronos-surface: #1e1915;
+  --chronos-elevated: #2a231d;
+  --chronos-border: #3a322a;
+  --chronos-muted: #a3988c;
+  --chronos-text: #f3ebe1;
+  --chronos-accent: #7eb8a8;
+  --chronos-accent-soft: rgba(126, 184, 168, 0.16);
+  --chronos-warm: #d4b896;
+  --chronos-ring: #7eb8a8;
+
+  --heat-0: #2a231d;
+  --heat-1: #35564c;
+  --heat-2: #4a7a6a;
+  --heat-3: #6fa894;
+  --heat-4: #9fd0bc;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  color: var(--chronos-text);
+  background:
+    radial-gradient(ellipse 80% 50% at 50% -10%, var(--chronos-accent-soft), transparent 55%),
+    radial-gradient(ellipse 60% 40% at 100% 100%, color-mix(in srgb, var(--chronos-warm) 12%, transparent), transparent 50%),
+    var(--chronos-bg);
+  background-attachment: fixed;
+}
+
+.chronos-shell {
+  min-height: 100vh;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--chronos-accent) 35%, transparent);
+}
+
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+  opacity: 0.4;
+}
+
+kbd {
+  font-family: var(--font-sans);
+}

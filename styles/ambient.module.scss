@@ -1,0 +1,33 @@
+.mixer {
+  background:
+    radial-gradient(120% 80% at 10% 0%, color-mix(in srgb, var(--chronos-accent) 12%, transparent), transparent 55%),
+    var(--chronos-surface);
+}
+
+.slider {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 6px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--chronos-border) 80%, transparent);
+  outline: none;
+
+  &::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--thumb, var(--chronos-accent));
+    cursor: pointer;
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--thumb, var(--chronos-accent)) 25%, transparent);
+  }
+
+  &::-moz-range-thumb {
+    width: 14px;
+    height: 14px;
+    border: none;
+    border-radius: 50%;
+    background: var(--thumb, var(--chronos-accent));
+    cursor: pointer;
+  }
+}
